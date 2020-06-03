@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use App\Jobs\CompanyRegistrationJob;
+use App\Jobs\UserRegistrationJob;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserFormRequest;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\Company;
 
 class RegisterController extends Controller
 {
@@ -17,26 +20,40 @@ class RegisterController extends Controller
 
     public function register(UserFormRequest $request)
     {
-        $user = User::create([
+        if($request->account_type == 'personal')
+        {
+            $user = User::create([
 
-            'name' => $request->name,
-            'email' => $request->email,
-            'location' => $request->location,
-            'phone'=> $request->phone,
-            'password' => Hash::make($request['password']),
+                'name' => $request->name,
+                'email' => $request->email,
+                'location' => $request->location,
+                'phone'=> $request->phone,
+                'status' => 'active',
+                'password' => Hash::make($request['password']),
+    
+            ]);
 
-        ]);
-
-        if($user):
+            UserRegistrationJob::dispatch($user);
 
             return response()->json(['status' => 'success']);
-        
-        else: 
-            
-            return response()->json(['status' => 'failed']);
 
-        
-        endif;
+        }else if($request->account_type == 'company'){
+
+           $company =  Company::create([
+
+                'company_name' => $request->company_name,
+                'email' => $request->email,
+                'location' => $request->location,
+                'phone'=> $request->phone,
+                'status' => 'active',
+                'password' => Hash::make($request['password']),
+            ]);
+
+            CompanyRegistrationJob::dispatch($company);
+
+            return response()->json(['status' => 'success']);
+
+        }
     }
 
 

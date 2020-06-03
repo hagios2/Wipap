@@ -7,17 +7,15 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use SMartins\PassportMultiauth\HasMultiAuthApiTokens;
 
-class Company extends Model
+class Company extends Authenticatable
 {
     use Notifiable, HasMultiAuthApiTokens;
+/* 
+    protected $hidden = ['password']; */
 
-    protected $guard = 'company';
-
-    protected $guarded = ['id'];
-
-    protected $hidden = ['password'];
-
-
+    protected $fillable = [
+        'company_name', 'email', 'password', 'phone', 'last_login', 'status', 'location'
+    ];
 
     public function findForPassport($username)
     {
