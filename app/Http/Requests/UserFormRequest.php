@@ -23,15 +23,37 @@ class UserFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        if(request()->account_type == 'company')
+        {
+            return [
 
-            "name" => 'required|string',
+                "company_name" => 'required|string',
+    
+                "email" => "required|email|unique:users,email",
+    
+                "phone" => "required|string|unique:users,phone",
 
-            "email" => "required|email|unique:users,email",
+                'location' => 'required|string',
+    
+                "password" => "required|string"
+            ];
 
-            "phone" => "required|string|unique:users,phone",
+        }else if(request()->account_type == 'personal')
+        {
+            return [
 
-            "password" => "required|string"
-        ];
+                "name" => 'required|string',
+    
+                "email" => "required|email|unique:users,email",
+    
+                "phone" => "required|string|unique:users,phone",
+
+                'location' => 'required|string',
+    
+                "password" => "required|string"
+            ];
+        }
+        
     }
+      
 }

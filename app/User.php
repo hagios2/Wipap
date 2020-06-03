@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone'
+        'name', 'email', 'password', 'phone', 'last_login', 'status', 'location'
     ];
 
     /**
@@ -37,4 +37,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+
+    public function findForPassport($username)
+    {
+        $user = $this->where([['email', $username], ['status', 'active']])->first();
+
+        if($user)
+        {
+            $user->update(['last_login' => now()]);
+
+            return $user;
+        }
+
+        return $user;
+    }
+
 }
