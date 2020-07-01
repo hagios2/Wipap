@@ -22,3 +22,16 @@ Route::post('/register', 'Api\RegisterController@register');
 Route::post('/update-profile', 'Api\RegisterController@update');
 
 Route::post('/logout', 'Api\RegisterController@logoutApi');
+
+Route::fallback(function () {
+    
+    return response()->json(['message' => 'Route not found'],404);
+
+})->name('api.fallback.404');
+
+
+Route::group(['prefix' => 'payment'], function () {
+
+    Route::get('/callback/{status}/{transac_id}/{cust_ref}/{pay_token}','PaymentController@callback');
+    
+});
