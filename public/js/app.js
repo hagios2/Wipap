@@ -1932,6 +1932,65 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/tab_menu.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/tab_menu.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  /*  data() {
+       return {
+           items: [
+               {label: 'Home', icon: 'pi pi-fw pi-home', to: '/tabmenu'},
+               {label: 'Calendar', icon: 'pi pi-fw pi-calendar', to: '/tabmenu/calendar'},
+               {label: 'Edit', icon: 'pi pi-fw pi-pencil', to: '/tabmenu/edit'},
+               {label: 'Documentation', icon: 'pi pi-fw pi-file', to: '/tabmenu/documentation'},
+               {label: 'Settings', icon: 'pi pi-fw pi-cog', to: '/tabmenu/settings'}
+           ]
+       }
+   } */
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -37507,6 +37566,125 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/tab_menu.vue?vue&type=template&id=5d103894&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/tab_menu.vue?vue&type=template&id=5d103894& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("Menubar", {
+        scopedSlots: _vm._u([
+          {
+            key: "end",
+            fn: function() {
+              return [
+                _c(
+                  "div",
+                  { staticStyle: { position: "fixed", left: "20px" } },
+                  [
+                    _c("Button", {
+                      attrs: { icon: "pi pi-bars" },
+                      on: {
+                        click: function($event) {
+                          _vm.visibleLeft = true
+                        }
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("InputText", {
+                  attrs: { placeholder: "Search", type: "text" }
+                }),
+                _vm._v(" "),
+                _c("Button", {
+                  style: { "margin-left": "1em" },
+                  attrs: { label: "Logout", icon: "pi pi-power-off" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.logout_user(_vm.user_token)
+                    }
+                  }
+                })
+              ]
+            },
+            proxy: true
+          }
+        ])
+      }),
+      _vm._v(" "),
+      _c(
+        "Sidebar",
+        {
+          attrs: { visible: _vm.visibleLeft, baseZIndex: 1000 },
+          on: {
+            "update:visible": function($event) {
+              _vm.visibleLeft = $event
+            }
+          }
+        },
+        [
+          _c("h1", { staticStyle: { fontWeight: "normal" } }, [
+            _vm._v("User Dashboard")
+          ]),
+          _vm._v(" "),
+          _c(
+            "Accordion",
+            [
+              _c("AccordionTab", { attrs: { header: "About" } }, [
+                _c("p", [
+                  _vm._v(
+                    "The story begins as Don Vito Corleone, the head of a New York Mafia family, overseeshis daughter's wedding. His beloved son ichael has just come home from the war,\n        but does not intend to become part of his father's business. Through Michael's life the nature of the family business becomes clear. The business of the family is\n        just like the head of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family."
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("AccordionTab", { attrs: { header: "Profile" } }, [
+                _c("p", [
+                  _vm._v(
+                    "Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, TheGodfather parallels the young Vito Corleone's rise with his son Michael's spiritual fall,\n        deepening The Godfather's depiction of the dark side of the American dream. In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills\n        his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy."
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("AccordionTab", { attrs: { header: "Settings" } }, [
+                _c("p", [
+                  _vm._v(
+                    "The Godfather Part III is set in 1979 and 1980. Michael has moved back to New York and taken great strides to remove the family from crime. He turns over his New York criminal\n        interests to longtime enforcer Joey Zasa. He uses his wealth in an attempt to rehabilitate his reputation through numerous philanthropic acts, administered by a foundation named after his father.\n        A decade earlier, he gave custody of his two children to Kay, who has since remarried."
+                  )
+                ])
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -49682,8 +49860,13 @@ module.exports = function(module) {
  * building robust, powerful web applications using Vue and Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/* const vue_prime = require('./node_modules/primevue');
+
+Vue.use(vue_prime); */
+
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+window.primevue = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'primevue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -49691,10 +49874,23 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
+
+/* import TabMenu from 'primevue/tabmenu';
+import Accordion from 'primevue/accordion';
+import AccordionTab from 'primevue/accordiontab';
+import Sidebar from 'primevue/sidebar';
+import Menubar from 'primevue/menubar';
+import Button from 'primevue/button';  */
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component('tab-menu', __webpack_require__(/*! ./components/tab_menu.vue */ "./resources/js/components/tab_menu.vue"));
+Vue.component('Accordion', __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'primevue/accordion'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
+Vue.component('AccordionTab', __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'primevue/accordiontab'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
+Vue.component('Sidebar', __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'primevue/sidebar'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
+Vue.component('Menubar', __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'primevue/menubar'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
+Vue.component('Button', __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'primevue/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -49816,6 +50012,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/tab_menu.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/tab_menu.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _tab_menu_vue_vue_type_template_id_5d103894___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tab_menu.vue?vue&type=template&id=5d103894& */ "./resources/js/components/tab_menu.vue?vue&type=template&id=5d103894&");
+/* harmony import */ var _tab_menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tab_menu.vue?vue&type=script&lang=js& */ "./resources/js/components/tab_menu.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _tab_menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _tab_menu_vue_vue_type_template_id_5d103894___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _tab_menu_vue_vue_type_template_id_5d103894___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/tab_menu.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/tab_menu.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/tab_menu.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_tab_menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./tab_menu.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/tab_menu.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_tab_menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/tab_menu.vue?vue&type=template&id=5d103894&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/tab_menu.vue?vue&type=template&id=5d103894& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_tab_menu_vue_vue_type_template_id_5d103894___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./tab_menu.vue?vue&type=template&id=5d103894& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/tab_menu.vue?vue&type=template&id=5d103894&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_tab_menu_vue_vue_type_template_id_5d103894___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_tab_menu_vue_vue_type_template_id_5d103894___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

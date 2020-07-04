@@ -8,18 +8,21 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-       
+        <script src="{{ asset('js/app.js') }}"></script>
     </head>
     <body>
 
-        <div id="app">
-            <example-component></example-component>
+     
 
+            <div id="app">
                 <tab-menu></tab-menu>
 
-           {{--  @section('content')
-            @endsection --}}
-        </div>
-        <script src="{{ asset('js/app.js') }}"></script>
+                @section('content')
+                @endsection
+            </div>
+            
+ 
+    
+
     </body>
 </html>

@@ -15,7 +15,8 @@
         "laravel/tinker": "^1.0",
         "slydepay/slydepay-soap": "^1.1",
         "smartins/passport-multiauth": "^4.1",
-        "socialiteproviders/google": "^3.0"
+        "socialiteproviders/google": "^3.0",
+        "barryvdh/laravel-cors": "^0.11.4"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
