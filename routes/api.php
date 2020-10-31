@@ -13,8 +13,33 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::group(['prefix' => 'auth'], function ($router) {
+
+    Route::post('login', 'AuthController@login');
+
+    Route::post('logout', 'AuthController@logout');
+
+    Route::post('refresh-token', 'AuthController@refresh');
+
+    Route::get('user', 'AuthController@getAuthUser');
+
+    Route::patch('update/{user}/user', 'UsersRegisterController@update');
+
+    Route::delete('user/delete', 'UsersRegisterController@destroy');
+
+    Route::post('email/verify', 'VerificationController@verify')->name('verification.verify'); // Make sure to keep this as your route name
+
+    Route::post('email/resend', 'VerificationController@resend')->name('verification.resend');
+
+    Route::post('request/password/reset', 'PasswordResetController@sendResetMail');
+
+    Route::post('reset/password/', 'PasswordResetController@reset');
+
+    Route::post('change/password', 'PasswordResetController@changeUserPassword');
+
+    Route::post('upload/valid-id', 'AuthController@saveValidId');
+
 });
 
 Route::post('/register', 'Api\RegisterController@register');
