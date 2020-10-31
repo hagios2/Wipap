@@ -46,12 +46,18 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-
-        'company' => [
-            'driver' => 'passport',
-            'provider' => 'companies',
+        'wmc_admins' => [
+            'driver' => 'jwt',
+            'provider' => 'wcm_admins',
             'hash' => false,
         ],
+        'admin' => [
+            'driver' => 'jwt',
+            'provider' => 'admins',
+            'hash' => false,
+        ],
+
+
     ],
 
     /*
@@ -76,8 +82,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
-        'companies' => [
+        'wcm_admins' => [
+            'driver' => 'eloquent',
+            'model' => App\WasteCompanyAdmin::class,
+        ],
+        'admins' => [
             'driver' => 'eloquent',
             'model' => App\Company::class,
         ],
