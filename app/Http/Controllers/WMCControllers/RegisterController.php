@@ -34,6 +34,16 @@ class RegisterController extends Controller
 
             $admin->update(['waste_company_id' => $company->id]);
 
+            if($request->hasFile('logo'))
+            {
+                $this->uploadCompanyFiles($company, 'loog');
+            }
+
+            if($request->hasFile('business_cert'))
+            {
+                $this->uploadCompanyFiles($company, 'business_cert');
+            }
+
             $new_token = Str::random(60);
 
             $token = VerifyEmail::create([
