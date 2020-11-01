@@ -16,7 +16,7 @@ Route::namespace('WMCControllers')->group(function () {
 
     Route::group(['prefix' => 'super_admin'], function (){
 
-        Route::post('create/admin', 'SuperAdminController@');
+        Route::post('create/admin', 'SuperAdminController@newAdmin');
 
         Route::post('{admin}/block', 'SuperAdminController@blockAdmin');
 
