@@ -38,11 +38,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="350bb5b6-037a-494f-9ae5-06a347f52aeb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WMCControllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WMCControllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/WmcAdminResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/WmcAdminResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/WasteCompanyAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/WasteCompanyAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/GarbageTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/GarbageTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

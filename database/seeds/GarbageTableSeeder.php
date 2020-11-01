@@ -1,6 +1,6 @@
 <?php
 
-use App\Bin;
+use App\GarbageType;
 use Illuminate\Database\Seeder;
 
 class GarbageTableSeeder extends Seeder
@@ -16,7 +16,7 @@ class GarbageTableSeeder extends Seeder
 
         foreach ($bins as $bin)
         {
-            Bin::create(['bin_type' => $bin]);
+            GarbageType::create(['garbage_type' => $bin]);
 
         }
     }
