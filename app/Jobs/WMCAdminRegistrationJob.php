@@ -16,7 +16,7 @@ class WMCAdminRegistrationJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    
+
     public $token;
 
     public $admin;
@@ -41,8 +41,7 @@ class WMCAdminRegistrationJob implements ShouldQueue
     public function handle()
     {
         Mail::to($this->admin)
-        
-        ->queue(new WMCAdminRegistrationMail($this->admin, $this->token)
-    );
+
+        ->queue(new WMCAdminRegistrationMail($this->admin, $this->token));
     }
 }

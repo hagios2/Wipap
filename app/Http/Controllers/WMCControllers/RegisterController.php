@@ -21,8 +21,7 @@ class RegisterController extends Controller
 
             Role::where('role', 'super_admin')->first();
 
-            $user_details = $request->only(['name', 'email',
-                'phone']);
+            $user_details = $request->only(['name', 'email', 'phone']);
 
             $user_details['password'] = Hash::make($request->password);
 
@@ -31,7 +30,7 @@ class RegisterController extends Controller
             $company_details = $request->only(['name', 'email',
                 'phone']);
 
-            $merchandiser = WasteCompany::create($company_details);
+            $company = WasteCompany::create($company_details);
 
             $new_token = Str::random(60);
 
@@ -41,7 +40,7 @@ class RegisterController extends Controller
                 'isAWMCAdminToken' => true
             ]);
 
-            WMCAdminRegistrationJob::dispatch($merchandiser, $token);
+            WMCAdminRegistrationJob::dispatch($admin, $token);
 
             return response()->json(['status' => 'success'], 200);
 

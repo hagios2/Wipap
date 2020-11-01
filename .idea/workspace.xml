@@ -37,7 +37,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="350bb5b6-037a-494f-9ae5-06a347f52aeb" name="Default Changelist" comment="" />
+    <list default="true" id="350bb5b6-037a-494f-9ae5-06a347f52aeb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WMCControllers/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WMCControllers/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/keys/oauth-private.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/keys/oauth-public.key" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,10 +190,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604213844349">
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604215661752">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1604213844349" />
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1604215661752" />
     <state x="514" y="159" key="RollbackChangesDialog" timestamp="1604213752955">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
