@@ -23,7 +23,7 @@ class Controller extends BaseController
 
             $fileName = $file->getClientOriginalName();
 
-            $relative_path = "$fileType/{$company->id}/";
+           // $relative_path = "$fileType/{$company->id}/";
 
             //$path =  "/var/www/html/uploads/".$relative_path;
             $path = public_path("uploads/$fileType");
@@ -32,7 +32,7 @@ class Controller extends BaseController
 
             $company->update([
 
-                $fileType => $relative_path.$fileName
+                $fileType => $path.$fileName
             ]);
         }
 
