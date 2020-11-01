@@ -42,19 +42,19 @@ return [
         ],
 
         'api' => [
-            'driver' => 'passport',
+            'driver' => 'jwt',
             'provider' => 'users',
-            'hash' => false,
+            //'hash' => false,
         ],
         'wmc_admins' => [
             'driver' => 'jwt',
-            'provider' => 'wcm_admins',
-            'hash' => false,
+            'provider' => 'wmc_admins',
+            //'hash' => false,
         ],
         'admin' => [
             'driver' => 'jwt',
             'provider' => 'admins',
-            'hash' => false,
+           // 'hash' => false,
         ],
 
 
@@ -82,7 +82,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-        'wcm_admins' => [
+        'wmc_admins' => [
             'driver' => 'eloquent',
             'model' => App\WasteCompanyAdmin::class,
         ],

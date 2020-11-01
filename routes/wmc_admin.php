@@ -5,7 +5,7 @@
 
 Route::namespace('WMCController')->group(function () {
 
-    Route::group(['prefix' => 'auth'], function ($router) {
+    Route::group(['prefix' => 'auth'], function () {
 
         Route::post('login', 'AuthController@login');
         Route::post('logout', 'AuthController@logout');

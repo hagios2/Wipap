@@ -75,7 +75,7 @@ class RouteServiceProvider extends ServiceProvider
 
     public function mapWMCApiRoutes()
     {
-        Route::prefix('api')
+        Route::prefix('api/wmc')
             ->middleware('api')
             ->namespace($this->namespace)
             ->group(base_path('routes/wmc_admin.php'));
