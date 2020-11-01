@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\WMCRequests\RegistrationRequest;
 use App\Jobs\WMCAdminRegistrationJob;
 use App\Role;
+use App\VerifyEmail;
 use App\WasteCompany;
 use App\WasteCompanyAdmin;
 use Illuminate\Http\Request;
