@@ -15,6 +15,19 @@ class isSuperAdmin
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(auth()->guard('wmc_admin')->check())
+        {
+            $user = auth()->guard('wmc_admin')->user();
+
+            if($user->role->role == 'super_admin')
+            {
+                return $next($request);
+            }
+
+            return response()->json(['message' => 'Forbidden'], 403);
+        }
+
+        return response()->json(['message' => 'Unauthenticated'], 401);
     }
+
 }

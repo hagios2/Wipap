@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Hash;
 
 class SuperAdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('isSuperAdmin');
+    }
 
     public function fetchAdmins()
     {
@@ -25,28 +29,22 @@ class SuperAdminController extends Controller
 
     public function newAdmin(NewWMCAdminRequest $request)
     {
+        $attributes = $request->validated();
 
-        if(auth()->guard('wmc_admin')->user()->role->role == 'super_admin')
-        {
+        $password = Str::random(8);
 
-            $attributes = $request->validated();
+        $attributes['password'] = Hash::make($password);
 
-            $password = Str::random(8);
+        $attributes['must_change_password'] = true;
 
-            $attributes['password'] = Hash::make($password);
+        $attributes['waste_company_id'] = auth()->guard('wmc_admin')->user()->waste_company_id;
 
-            $attributes['must_change_password'] = true;
+        $admin = WasteCompanyAdmin::create($attributes);
 
-            $attributes['waste_company_id'] = auth()->guard('wmc_admin')->user();
+        NewWMCAdminJob::dispatch($admin, $password);
 
-            $admin = WasteCompanyAdmin::create($attributes);
+        return response()->json(['status' => 'new admin added']);
 
-            NewWMCAdminJob::dispatch($admin, $password);
-
-            return response()->json(['status' => 'new admin added']);
-        }
-
-        return response()->json(['message' => 'Forbidden'], 403);
 
     }
 

@@ -6,6 +6,9 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * @method static create(array $attributes)
+ */
 class WasteCompanyAdmin extends Authenticatable implements JWTSubject
 {
     use Notifiable;
