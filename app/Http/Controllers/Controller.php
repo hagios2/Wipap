@@ -26,7 +26,7 @@ class Controller extends BaseController
            // $relative_path = "$fileType/{$company->id}/";
 
             //$path =  "/var/www/html/uploads/".$relative_path;
-            $path = public_path("uploads/$fileType");
+            $path = public_path("uploads/$fileType/");
 
             $file->move($path, $fileName);
 

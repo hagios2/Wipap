@@ -20,11 +20,12 @@ class RegisterController extends Controller
     {
         DB::transaction(function () use ($request) {
 
-            Role::where('role', 'super_admin')->first();
+            $role = Role::where('role', 'super_admin')->first();
 
             $user_details = $request->only(['name', 'email', 'phone']);
 
             $user_details['password'] = Hash::make($request->password);
+            $user_details['role_id'] = $role->id;
 
             $admin = WasteCompanyAdmin::create($user_details);
 
@@ -37,7 +38,7 @@ class RegisterController extends Controller
 
             if($request->hasFile('logo'))
             {
-                $this->uploadCompanyFiles($company, 'loog');
+                $this->uploadCompanyFiles($company, 'logo');
             }
 
             if($request->hasFile('business_cert'))
