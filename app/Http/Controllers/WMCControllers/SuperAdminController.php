@@ -10,6 +10,7 @@ use App\Role;
 use App\WasteCompanyAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class SuperAdminController extends Controller
 {
