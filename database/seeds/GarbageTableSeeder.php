@@ -1,5 +1,6 @@
 <?php
 
+use App\Bin;
 use Illuminate\Database\Seeder;
 
 class GarbageTableSeeder extends Seeder
