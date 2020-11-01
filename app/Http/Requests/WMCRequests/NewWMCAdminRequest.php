@@ -27,7 +27,8 @@ class NewWMCAdminRequest extends FormRequest
             'name' => 'required|string',
             'email' => 'required|email|unique:waste_company_admins,email',
             'phone' => 'required|numeric|min:10|unique:waste_company_admins,phone',
-            'role_id' => 'required|integer'
+            'role_id' => 'required|integer',
+            'title' => 'required'
         ];
     }
 }

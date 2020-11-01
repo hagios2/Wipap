@@ -30,6 +30,8 @@ class WmcAdminResource extends JsonResource
 
             'isActive' => $this->isActive,
 
+            'title' => $this->title,
+
             'must_change_password' => $this->must_change_password
         ];
     }

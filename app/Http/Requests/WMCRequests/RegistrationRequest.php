@@ -30,6 +30,7 @@ class RegistrationRequest extends FormRequest
             'email' => 'required|email|unique:waste_company_admins,email',
             'phone' => 'required|numeric|min:10|unique:waste_company_admins,phone',
             'password' => 'required|string',
+            'title' => 'required|string',
 
             #------------ for Company -----------------
             'company_name' => 'required|string',
