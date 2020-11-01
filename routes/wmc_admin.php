@@ -3,7 +3,7 @@
 
 #============================ WMC Admin Routes =============================================
 
-Route::namespace('WMCController')->group(function () {
+Route::namespace('WMCControllers')->group(function () {
 
     Route::group(['prefix' => 'auth'], function () {
 
