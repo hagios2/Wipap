@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * @method static create(array $attributes)
+ * @method static where(string $string, string $string1, \Illuminate\Support\HigherOrderCollectionProxy $id)
  */
 class WasteCompanyAdmin extends Authenticatable implements JWTSubject
 {

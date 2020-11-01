@@ -21,11 +21,11 @@ class SuperAdminController extends Controller
 
     public function fetchAdmins()
     {
-        $role = Role::query()->where('role', 'super_admin')->get();
+       return  $role = Role::query()->where('role', 'super_admin')->get();
 
         $admins = WasteCompanyAdmin::where('role_id', '!=', $role->id)->get();
 
-        return ViewWMCAdminsResource ::collection($admins);
+        return ViewWMCAdminsResource::collection($admins);
     }
 
     public function newAdmin(NewWMCAdminRequest $request)
@@ -51,20 +51,20 @@ class SuperAdminController extends Controller
 
 
 
-    public function blockUser(WasteCompanyAdmin $user)
+    public function blockUser(WasteCompanyAdmin $admin)
     {
 
-        $user->update(['isActive' => false]);
+        $admin->update(['isActive' => false]);
 
         return response()->json(['status' => 'blocked']);
 
     }
 
 
-    public function unblockUser(WasteCompanyAdmin $user)
+    public function unblockUser(WasteCompanyAdmin $admin)
     {
 
-        $user->update(['isActive' => true]);
+        $admin->update(['isActive' => true]);
 
         return response()->json(['status' => 'unblocked']);
 
