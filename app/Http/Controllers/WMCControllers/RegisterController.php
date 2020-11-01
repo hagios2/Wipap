@@ -55,9 +55,9 @@ class RegisterController extends Controller
 
             WMCAdminRegistrationJob::dispatch($admin, $token);
 
-            return response()->json(['status' => 'success'], 200);
-
         });
+
+        return response()->json(['status' => 'success'], 200);
     }
 
     // public function register(Request $request)
