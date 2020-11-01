@@ -106,3 +106,6 @@ Route::group(['prefix' => 'payment'], function () {
     Route::get('/callback/{status}/{transac_id}/{cust_ref}/{pay_token}','PaymentController@callback');
 
 });
+
+
+Route::get('garbage/types','ResourceController@getGarbageTypes');
