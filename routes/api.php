@@ -91,20 +91,18 @@ Route::get('product/{product}/reviews', 'ReviewsController@fetchProductReviews')
 
 Route::post('add-product/reviews', 'ReviewsController@storeProductReview');
 
-Route::post('add-product/report', 'ReportsController@saveProductReport'); 
+Route::post('add-product/report', 'ReportsController@saveProductReport');
 
-Route::post('add-shop/report', 'ReportsController@saveShopReport'); 
+Route::post('add-shop/report', 'ReportsController@saveShopReport');
 
 
-Route::group(['prefix' => 'merchandiser'], function () {
-    
-    return response()->json(['message' => 'Route not found'],404);
+Route::fallback(function(){
 
-})->name('api.fallback.404');
-
+    return response()->json(['message' => 'Route not found'], 404);
+});
 
 Route::group(['prefix' => 'payment'], function () {
 
     Route::get('/callback/{status}/{transac_id}/{cust_ref}/{pay_token}','PaymentController@callback');
-    
+
 });

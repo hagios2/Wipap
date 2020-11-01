@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Route;
-use Laravel\Passport\Passport;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -27,13 +26,6 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Passport::loadKeysFrom(storage_path('keys/'));
-        
-        Route::group(['middleware' => 'oauth.providers'], function () {
-            Passport::routes(function ($router) {
-                return $router->forAccessTokens();
-            });
-        });
 
         //
     }
