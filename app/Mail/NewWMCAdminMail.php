@@ -12,6 +12,9 @@ class NewWMCAdminMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public  $admin;
+
+    public $password;
     /**
      * Create a new message instance.
      *
