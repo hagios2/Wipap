@@ -26,7 +26,9 @@ class WmcAdminResource extends JsonResource
 
             'company' => $this->company,
 
-            'role' => $this->role
+            'role' => $this->role,
+
+            'isActive' => $this->isActive,
         ];
     }
 }

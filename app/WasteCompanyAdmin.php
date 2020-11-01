@@ -36,7 +36,7 @@ class WasteCompanyAdmin extends Authenticatable implements JWTSubject
 
     public function company()
     {
-        return $this->belongsTo(WasteCompany::class);
+        return $this->belongsTo(WasteCompany::class, 'waste_company_id');
     }
 
     public function role()

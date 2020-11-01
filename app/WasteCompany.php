@@ -10,6 +10,6 @@ class WasteCompany extends Model
 
     public function company()
     {
-        return $this->hasMany(WasteCompanyAdmin::class);
+        return $this->hasMany(WasteCompanyAdmin::class, 'waste_company_id');
     }
 }
