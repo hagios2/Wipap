@@ -46,7 +46,7 @@ return [
             'provider' => 'users',
             //'hash' => false,
         ],
-        'wmc_admins' => [
+        'wmc_admin' => [
             'driver' => 'jwt',
             'provider' => 'wmc_admins',
             //'hash' => false,

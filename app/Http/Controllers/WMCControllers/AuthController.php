@@ -15,7 +15,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:wcm_admins', ['except' => ['login']]);
+        $this->middleware('auth:wmc_admin', ['except' => ['login']]);
     }
 
     /**
@@ -29,7 +29,7 @@ class AuthController extends Controller
 
         $credentials['isActive'] = true;
 
-        if (! $token = auth()->guard('wcm_admins')->attempt($credentials)) {
+        if (! $token = auth()->guard('wmc_admin')->attempt($credentials)) {
 
             return response()->json(['error' => 'Unauthorized'], 401);
         }
@@ -45,7 +45,7 @@ class AuthController extends Controller
     public function getAuthUser()
     {
 
-        return new WmcAdminResource(auth()->guard('wcm_admins')->user());
+        return new WmcAdminResource(auth()->guard('wmc_admin')->user());
 
     }
 
@@ -57,7 +57,7 @@ class AuthController extends Controller
     public function logout()
     {
 
-        auth()->guard('wcm_admins')->logout();
+        auth()->guard('wmc_admin')->logout();
 
         return response()->json(['message' => 'Successfully logged out']);
     }
@@ -69,7 +69,7 @@ class AuthController extends Controller
      */
     public function refresh()
     {
-        return $this->respondWithToken(auth()->guard('wcm_admins')->refresh());
+        return $this->respondWithToken(auth()->guard('wmc_admin')->refresh());
     }
 
     /**
@@ -84,7 +84,7 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->guard('wcm_admins')->factory()->getTTL() * 60,
+            'expires_in' => auth()->guard('wmc_admin')->factory()->getTTL() * 60,
             'statusCode' => 200
         ]);
     }

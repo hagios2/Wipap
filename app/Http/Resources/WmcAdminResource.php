@@ -24,12 +24,9 @@ class WmcAdminResource extends JsonResource
 
             'phone' => $this->phone,
 
-            'campus' => [
+            'company' => $this->company,
 
-                'id' => $this->campus->id,
-
-                'campus' => $this->campus->campus
-            ],
+            'role' => $this->role
         ];
     }
 }
