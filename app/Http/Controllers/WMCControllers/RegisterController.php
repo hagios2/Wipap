@@ -27,10 +27,12 @@ class RegisterController extends Controller
 
             $admin = WasteCompanyAdmin::create($user_details);
 
-            $company_details = $request->only(['name', 'email',
-                'phone']);
+            $company_details = $request->except(['name', 'email',
+                'phone', 'password']);
 
             $company = WasteCompany::create($company_details);
+
+            $admin->update(['waste_company_id' => $company->id]);
 
             $new_token = Str::random(60);
 
