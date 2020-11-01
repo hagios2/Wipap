@@ -10,7 +10,7 @@ Route::namespace('WMCControllers')->group(function () {
         Route::post('login', 'AuthController@login');
         Route::post('logout', 'AuthController@logout');
         Route::post('refresh', 'AuthController@refresh');
-        Route::post('admin', 'AuthController@authAdmin');
+        Route::get('admin', 'AuthController@getAuthUser');
         Route::post('register', 'RegisterController@register');
 
     });

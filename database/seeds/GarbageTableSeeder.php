@@ -12,11 +12,11 @@ class GarbageTableSeeder extends Seeder
      */
     public function run()
     {
-        $bins = ['organic', 'metals', 'plastic', 'poly-ethene'];
+        $garbages = ['organic', 'metals', 'plastic', 'poly-ethene'];
 
-        foreach ($bins as $bin)
+        foreach ($garbages as $garbage)
         {
-            GarbageType::create(['garbage_type' => $bin]);
+            GarbageType::create(['garbage_type' => $garbage]);
 
         }
     }
