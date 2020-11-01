@@ -21,6 +21,7 @@ class CreateWasteCompanyAdminsTable extends Migration
             $table->boolean('isActive')->default(true);
             $table->integer('waste_company_id')->unsigned()->nullable();
             $table->integer('role_id')->unsigned()->nullable();
+            $table->integer('must_change_password')->default(false);
             // $table->string('location');
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('last_login')->nullable();
