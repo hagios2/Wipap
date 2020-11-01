@@ -16,6 +16,7 @@ class CreateBinsTable extends Migration
         Schema::create('bins', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('bin_id')->unique();
+            $table->integer('wmc_company_id');
             $table->string('garbage_type_id')->unique();
             $table->timestamps();
         });
