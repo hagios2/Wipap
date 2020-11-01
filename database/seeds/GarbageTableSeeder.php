@@ -17,6 +17,7 @@ class GarbageTableSeeder extends Seeder
         foreach ($bins as $bin)
         {
             Bin::create(['bin_type' => $bin]);
+
         }
     }
 }
