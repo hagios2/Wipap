@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers\WMCControllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\UserResource;
 use App\Http\Resources\WmcAdminResource;
+use Illuminate\Http\Request;
 
-class WMCAdminAuthController extends Controller
+class AuthController extends Controller
 {
-
-      /**
+    /**
      * Create a new AuthController instance.
      *
      * @return void
@@ -74,7 +72,7 @@ class WMCAdminAuthController extends Controller
         return $this->respondWithToken(auth()->guard('wcm_admins')->refresh());
     }
 
-      /**
+    /**
      * Get the token array structure.
      *
      * @param  string $token
