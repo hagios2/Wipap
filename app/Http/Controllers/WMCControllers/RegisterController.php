@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
-    public function create(RegistrationRequest $request)
+    public function register(RegistrationRequest $request)
     {
         DB::transaction(function () use ($request) {
 

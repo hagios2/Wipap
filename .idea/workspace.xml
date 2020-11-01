@@ -38,13 +38,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="350bb5b6-037a-494f-9ae5-06a347f52aeb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/wmc_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WMCControllers/WMCAdminAuth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WMCControllers/WMCAdminRegistrationController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/WasteCompanyAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/WasteCompanyAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WMCControllers/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WMCControllers/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/WMCRequests/RegistrationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/WMCRequests/RegistrationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_30_223010_add_valid_id_to_users.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/wmc_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/wmc_admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

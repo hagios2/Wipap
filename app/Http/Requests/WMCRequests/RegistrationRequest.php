@@ -24,13 +24,13 @@ class RegistrationRequest extends FormRequest
     public function rules()
     {
         return [
-            
+
              #------------ for Company Superadmin -----------------
             'name' => 'required|string',
             'email' => 'required|email|unique:waste_company_admins,email',
             'phone' => 'required|numeric|min:10|unique:waste_company_admins,phone',
             'password' => 'required|string',
-          
+
             #------------ for Company -----------------
             'company_name' => 'required|string',
             'company_email' => 'required|email|unique:waste_companies,company_email',
@@ -39,10 +39,6 @@ class RegistrationRequest extends FormRequest
             'company_phone' => 'required|unique:waste_companies,company_phone',
             'company_purpose' => 'nullable|string'
 
-
-         
-
-    
         ];
     }
 }
