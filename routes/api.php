@@ -110,4 +110,4 @@ Route::group(['prefix' => 'payment'], function () {
 
 Route::get('garbage/types','ResourceController@getGarbageTypes');
 
-Route::get('garbage/types','ResourceController@roles');
+Route::get('get/roles','ResourceController@roles');
