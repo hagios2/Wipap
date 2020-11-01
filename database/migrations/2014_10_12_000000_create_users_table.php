@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->integer('organization_id')->unsigned()->nullable();
             $table->integer('role_id')->unsigned()->nullable();
             $table->string('location');
+            $table->string('long')->nullable();
+            $table->string('lat')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('last_login')->nullable();
             $table->string('password');

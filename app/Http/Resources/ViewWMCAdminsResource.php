@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class WmcAdminResource extends JsonResource
+class ViewWMCAdminsResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -24,13 +24,10 @@ class WmcAdminResource extends JsonResource
 
             'phone' => $this->phone,
 
-            'company' => $this->company,
-
             'role' => $this->role,
 
             'isActive' => $this->isActive,
 
-            'must_change_password' => $this->must_change_password
         ];
     }
 }
