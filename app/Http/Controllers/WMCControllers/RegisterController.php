@@ -22,15 +22,16 @@ class RegisterController extends Controller
 
             $role = Role::where('role', 'super_admin')->first();
 
-            $user_details = $request->only(['name', 'email', 'phone']);
+            $user_details = $request->only(['name', 'email', 'phone', 'title']);
 
             $user_details['password'] = Hash::make($request->password);
+
             $user_details['role_id'] = $role->id;
 
             $admin = WasteCompanyAdmin::create($user_details);
 
             $company_details = $request->except(['name', 'email',
-                'phone', 'password']);
+                'phone', 'password', 'title']);
 
             $company = WasteCompany::create($company_details);
 

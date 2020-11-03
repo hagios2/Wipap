@@ -49,7 +49,7 @@ class SuperAdminController extends Controller
 
 
 
-    public function blockUser(WasteCompanyAdmin $admin)
+    public function blockAdmin(WasteCompanyAdmin $admin)
     {
 
         $admin->update(['isActive' => false]);
@@ -59,7 +59,7 @@ class SuperAdminController extends Controller
     }
 
 
-    public function unblockUser(WasteCompanyAdmin $admin)
+    public function unblockAdmin(WasteCompanyAdmin $admin)
     {
 
         $admin->update(['isActive' => true]);
