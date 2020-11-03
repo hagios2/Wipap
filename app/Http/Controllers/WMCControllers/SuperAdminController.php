@@ -21,7 +21,7 @@ class SuperAdminController extends Controller
 
     public function fetchAdmins()
     {
-       $role = Role::query()->where('role', 'super_admin')->get();
+       $role = Role::query()->where('role', 'super_admin')->first();
 
         $admins = WasteCompanyAdmin::where('role_id', '!=', $role->id)->get();
 
