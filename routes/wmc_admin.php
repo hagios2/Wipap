@@ -14,6 +14,8 @@ Route::namespace('WMCControllers')->group(function () {
         Route::post('register', 'RegisterController@register');
     });
 
+    #============================ WMC Super Admin Routes =========================
+
     Route::group(['prefix' => 'super_admin'], function (){
 
         Route::post('create/admin', 'SuperAdminController@newAdmin');
@@ -22,10 +24,28 @@ Route::namespace('WMCControllers')->group(function () {
 
         Route::post('{admin}/unblock', 'SuperAdminController@unBlockAdmin');
 
-        Route::get('fetch-users', 'SuperAdminController@getUsers');
+//        Route::get('fetch-users', 'SuperAdminController@getUsers');
 
         Route::get('fetch-admins', 'SuperAdminController@fetchAdmins');
 
     });
+
+    #============================ End WMC Super Admin Routes =====================
+
+    #============================ WMC VehicleRoutes ========================
+
+    Route::group(['prefix' => 'vehicle'], function () {
+
+        Route::post('create', 'VehicleController@addVehicle');
+
+        Route::post('index', 'VehicleController@fetchVehicles');
+
+        Route::patch('{vehicle}/update', 'VehicleController@updateVehicle');
+
+        Route::patch('{vehicle}/delete', 'VehicleController@deleteVehicle');
+
+    });
+
+    #============================ End WMC VehicleRoutes ========================
 });
 #============================ End WMC Admin Route ==========================================
