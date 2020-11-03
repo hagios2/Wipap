@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 
@@ -32,5 +33,6 @@ class AppServiceProvider extends ServiceProvider
     {
        /*  $this->registerPolicies();
  */
+        Resource::withoutWrapping();
     }
 }
