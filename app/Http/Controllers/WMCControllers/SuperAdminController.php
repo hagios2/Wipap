@@ -21,7 +21,7 @@ class SuperAdminController extends Controller
 
     public function fetchAdmins()
     {
-       return  $role = Role::query()->where('role', 'super_admin')->get();
+       $role = Role::query()->where('role', 'super_admin')->get();
 
         $admins = WasteCompanyAdmin::where('role_id', '!=', $role->id)->get();
 
@@ -45,8 +45,6 @@ class SuperAdminController extends Controller
         NewWMCAdminJob::dispatch($admin, $password);
 
         return response()->json(['status' => 'new admin added']);
-
-
     }
 
 

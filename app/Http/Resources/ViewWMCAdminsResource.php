@@ -28,6 +28,8 @@ class ViewWMCAdminsResource extends JsonResource
 
             'isActive' => $this->isActive,
 
+            'title' => $this->title
+
         ];
     }
 }

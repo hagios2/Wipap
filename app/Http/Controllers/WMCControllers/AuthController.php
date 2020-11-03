@@ -4,6 +4,7 @@ namespace App\Http\Controllers\WMCControllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\WmcAdminResource;
+use App\WasteCompanyAdmin;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -30,6 +31,10 @@ class AuthController extends Controller
         $credentials['isActive'] = true;
 
         if (! $token = auth()->guard('wmc_admin')->attempt($credentials)) {
+
+            $admin = WasteCompanyAdmin::where('email', request()->email)->first();
+
+            $admin->update(['last_login' => now()]);
 
             return response()->json(['error' => 'Unauthorized'], 401);
         }
