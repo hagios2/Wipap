@@ -30,7 +30,7 @@ class VehicleController extends Controller
 
     public function fetchVehicles()
     {
-        $vehicles = Vehicle::query()->where('waste_company_id', auth()->guard('wmc_admin')->user()->waste_company_id);
+        $vehicles = Vehicle::query()->where('waste_company_id', auth()->guard('wmc_admin')->user()->waste_company_id)->get();
 
         return VehicleResource::collection($vehicles);
     }
