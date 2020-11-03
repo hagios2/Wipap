@@ -32,12 +32,12 @@ class AuthController extends Controller
 
         if (! $token = auth()->guard('wmc_admin')->attempt($credentials)) {
 
-            $admin = WasteCompanyAdmin::where('email', request()->email)->first();
-
-            $admin->update(['last_login' => now()]);
-
             return response()->json(['error' => 'Unauthorized'], 401);
         }
+
+        $admin = WasteCompanyAdmin::where('email', request()->email)->first();
+
+        $admin->update(['last_login' => now()]);
 
         return $this->respondWithToken($token);
     }
