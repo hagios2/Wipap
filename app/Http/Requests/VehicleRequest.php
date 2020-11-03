@@ -24,7 +24,7 @@ class VehicleRequest extends FormRequest
     public function rules()
     {
         return [
-            'vehicle' => 'required|string',
+            'vehicle_no' => 'required|string',
             'garbage_type_id' => 'required|integer',
             'gps_module' => 'required|string'
         ];
