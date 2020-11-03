@@ -38,11 +38,11 @@ Route::namespace('WMCControllers')->group(function () {
 
         Route::post('create', 'VehicleController@addVehicle');
 
-        Route::post('index', 'VehicleController@fetchVehicles');
+        Route::get('index', 'VehicleController@fetchVehicles');
 
         Route::patch('{vehicle}/update', 'VehicleController@updateVehicle');
 
-        Route::patch('{vehicle}/delete', 'VehicleController@deleteVehicle');
+        Route::delete('{vehicle}/delete', 'VehicleController@deleteVehicle');
 
     });
 
