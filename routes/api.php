@@ -18,6 +18,8 @@ Route::namespace('UserControllers')->group(function (){
 
     Route::group(['prefix' => 'auth'], function () {
 
+        Route::post('register', 'RegisterController@register');
+
         Route::post('login', 'AuthController@login');
 
         Route::post('logout', 'AuthController@logout');
