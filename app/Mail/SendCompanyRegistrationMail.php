@@ -31,6 +31,7 @@ class SendCompanyRegistrationMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mails.SendCompanyRegistrationMail');
+        return $this->markdown('mails.SendCompanyRegistrationMail')
+            ->subject('New Organization Registration');
     }
 }

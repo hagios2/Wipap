@@ -31,6 +31,8 @@ class SendPersonalRegistrationMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mails.SendPersonalRegistrationMail');
+        return $this->markdown('mails.SendPersonalRegistrationMail')
+            ->subject('New User Registration');
+
     }
 }

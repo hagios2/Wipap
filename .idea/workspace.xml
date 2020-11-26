@@ -39,8 +39,11 @@
   <component name="ChangeListManager">
     <list default="true" id="350bb5b6-037a-494f-9ae5-06a347f52aeb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/VehicleResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/VehicleResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Vehicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Vehicle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserControllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserControllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/SendCompanyRegistrationMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/SendCompanyRegistrationMail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/SendPersonalRegistrationMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/SendPersonalRegistrationMail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Organization.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Organization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +187,9 @@
       <workItem from="1604259999985" duration="2313000" />
       <workItem from="1604358700997" duration="6135000" />
       <workItem from="1604395787845" duration="454000" />
-      <workItem from="1604453808859" duration="643000" />
+      <workItem from="1604453808859" duration="1612000" />
+      <workItem from="1605110473056" duration="8000" />
+      <workItem from="1606354889822" duration="2626000" />
     </task>
     <servers />
   </component>
@@ -204,10 +209,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604237061425">
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606356586852">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1604237061425" />
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1606356586852" />
     <state x="514" y="159" key="RollbackChangesDialog" timestamp="1604213752955">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
