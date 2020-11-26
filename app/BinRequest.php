@@ -13,7 +13,7 @@ class BinRequest extends Model
         return $this->belongsTo(Organization::class);
     }
 
-    public function client()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

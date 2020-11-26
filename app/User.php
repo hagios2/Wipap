@@ -60,4 +60,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Organization::class);
     }
+
+    public function binRequest()
+    {
+        return $this->hasMany(BinRequest::class);
+    }
+
+    public function makeABinRequest($bin_request)
+    {
+        return $this->binRequest()->create($bin_request);
+    }
 }
