@@ -23,23 +23,38 @@ class RegistrationRequest extends FormRequest
      */
     public function rules()
     {
-        return [
 
-             #------------ for Company Superadmin -----------------
-            'name' => 'required|string',
-            'email' => 'required|email|unique:waste_company_admins,email',
-            'phone' => 'required|numeric|min:10|unique:waste_company_admins,phone',
-            'password' => 'required|string',
-            'title' => 'required|string',
+        if(request()->has('organization'))
+        {
 
-            #------------ for Company -----------------
-            'company_name' => 'required|string',
-            'company_email' => 'required|email|unique:waste_companies,company_email',
-            'company_address' => 'required|string',
-            'logo' => 'nullable|image',
-            'company_phone' => 'required|unique:waste_companies,company_phone',
-            'company_purpose' => 'nullable|string'
+            return [
 
-        ];
+                #------------ for Company -----------------
+                'company_name' => 'required|string',
+                'company_email' => 'required|email|unique:waste_companies,company_email',
+                'company_address' => 'required|string',
+                'logo' => 'nullable|image',
+                'company_phone' => 'required|unique:waste_companies,company_phone',
+                'company_purpose' => 'nullable|string',
+
+                     #------------ for Company Superadmin -----------------
+                'name' => 'required|string',
+                'email' => 'required|email|unique:waste_company_admins,email',
+                'phone' => 'required|numeric|min:10|unique:waste_company_admins,phone',
+                'password' => 'required|string',
+                'title' => 'required|string',
+            ];
+        }else{
+
+            return [
+
+                #------------ for Company Superadmin -----------------
+                'name' => 'required|string',
+                'email' => 'required|email|unique:waste_company_admins,email',
+                'phone' => 'required|numeric|min:10|unique:waste_company_admins,phone',
+                'password' => 'required|string',
+                'title' => 'required|string',
+            ];
+        }
     }
 }
