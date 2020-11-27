@@ -68,7 +68,7 @@ class AuthController extends Controller
 
         auth()->guard('api')->logout();
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return response()->json(['message' => 'logged out']);
     }
 
     /**
