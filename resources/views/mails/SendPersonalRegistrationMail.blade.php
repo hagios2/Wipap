@@ -1,5 +1,5 @@
 @component('mail::message')
-# Congrats {{ $company->name }}, <br>
+# Congrats {{ $user->name }}, <br>
 
 <p>You have successfully resgistered on Wipap platform.</p>
 
