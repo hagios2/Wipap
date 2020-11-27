@@ -28,6 +28,10 @@ class AuthUserResource extends JsonResource
 
             'role' => $this->role,
 
+            'lat' => $this->lat,
+
+            'long' => $this->long,
+
             'isActive' => $this->isActive,
 
             'title' => $this->title,
