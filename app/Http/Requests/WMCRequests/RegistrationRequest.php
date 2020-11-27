@@ -37,18 +37,18 @@ class RegistrationRequest extends FormRequest
                 'company_phone' => 'required|unique:waste_companies,company_phone',
                 'company_purpose' => 'nullable|string',
 
-                     #------------ for Company Superadmin -----------------
+                #------------ for Company Superadmin ------------------------
                 'name' => 'required|string',
                 'email' => 'required|email|unique:waste_company_admins,email',
                 'phone' => 'required|numeric|min:10|unique:waste_company_admins,phone',
                 'password' => 'required|string',
-                'title' => 'required|string',
+//                'title' => 'required|string',
             ];
         }else{
 
             return [
 
-                #------------ for Company Superadmin -----------------
+                #------------ for Company Superadmin -----------------------------
                 'name' => 'required|string',
                 'email' => 'required|email|unique:waste_company_admins,email',
                 'phone' => 'required|numeric|min:10|unique:waste_company_admins,phone',
