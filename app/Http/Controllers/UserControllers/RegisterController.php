@@ -24,7 +24,7 @@ class RegisterController extends Controller
 
             $role = Role::where('role', 'super_admin')->first();
 
-            $user_details = $request->only(['name', 'email', 'phone']);
+            $user_details = $request->only(['name', 'email', 'phone', 'title', 'location']);
 
             $user_details['password'] = Hash::make($request->password);
 
