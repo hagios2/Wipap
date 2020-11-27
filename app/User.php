@@ -90,4 +90,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->binRequest()->create($bin_request);
     }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }
