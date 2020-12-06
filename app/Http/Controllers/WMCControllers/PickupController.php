@@ -44,4 +44,12 @@ class PickupController extends Controller
 
         return PickUpRequestResource::collection($pick_up_requests);
     }
+
+    public function servePickRequest(PickUpRequest $pickUpRequest)
+    {
+        $pickUpRequest->update(['status' => 'served']);
+
+        return response()->json(['message' => 'served']);
+
+    }
 }

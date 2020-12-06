@@ -18,6 +18,7 @@ class CreatePickUpRequestsTable extends Migration
             $table->integer('pick_up_id')->unsigned();
             $table->integer('user_id')->unsigned()->nullable();
             $table->integer('organization_id')->unsigned()->nullable();
+            $table->string('status')->default('pending');
             $table->softDeletes();
             $table->timestamps();
         });
