@@ -38,7 +38,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="350bb5b6-037a-494f-9ae5-06a347f52aeb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserControllers/BinRequestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserControllers/BinRequestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/WasteCompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/WasteCompany.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +157,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -161,6 +166,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/WMCControllers" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/WMCRequests" />
     </key>
   </component>
@@ -185,7 +191,8 @@
       <workItem from="1604453808859" duration="1612000" />
       <workItem from="1605110473056" duration="8000" />
       <workItem from="1606354889822" duration="9974000" />
-      <workItem from="1606452142199" duration="1600000" />
+      <workItem from="1606452142199" duration="2918000" />
+      <workItem from="1607241056097" duration="7845000" />
     </task>
     <servers />
   </component>

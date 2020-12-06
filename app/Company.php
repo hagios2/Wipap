@@ -5,12 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use SMartins\PassportMultiauth\HasMultiAuthApiTokens;
 
 class Company extends Authenticatable
 {
-    use Notifiable, HasMultiAuthApiTokens;
-/* 
+    use Notifiable;
+/*
     protected $hidden = ['password']; */
 
     protected $fillable = [

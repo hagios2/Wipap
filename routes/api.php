@@ -45,8 +45,10 @@ Route::namespace('UserControllers')->group(function (){
         Route::post('upload/valid-id', 'AuthController@saveValidId');
 
     });
-});
 
+    Route::post('/make-/bin/request', 'BinRequestController@binRequest');
+
+});
 
 Route::fallback(function(){
 

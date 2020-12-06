@@ -12,4 +12,19 @@ class WasteCompany extends Model
     {
         return $this->hasMany(WasteCompanyAdmin::class, 'waste_company_id');
     }
+
+    public function pickUpDay()
+    {
+        return $this->hasMany(PickUp::class);
+    }
+
+    public function setPickupDay($pick_up)
+    {
+        return $this->pickUpDay()->create($pick_up);
+    }
+
+    public function pickUpRequest()
+    {
+        return $this->hasMany(PickUpRequest::class);
+    }
 }

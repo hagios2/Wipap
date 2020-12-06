@@ -21,7 +21,7 @@ class BinRequestController extends Controller
 
         if(auth()->guard('api')->user()->organization)
         {
-            $bin_request['organization_id'] = auth()->guard('api')->id();
+            $bin_request['organization_id'] = auth()->guard('api')->user()->organization->id;
 
         }else{
 
