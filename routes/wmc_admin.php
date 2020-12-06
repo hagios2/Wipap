@@ -49,7 +49,7 @@ Route::namespace('WMCControllers')->group(function () {
     #============================ End WMC VehicleRoutes ========================
 
 
-    #============================ WMC Pickup and Pickup Request Routes ========================
+    #============================ WMC Pickup and Pickup Request Routes ==========================
 
     Route::group(['prefix' => 'pickups'], function () {
 

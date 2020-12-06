@@ -19,9 +19,7 @@ class PickupController extends Controller
 
     public function setPickupDays(Request $request)
     {
-        $request->validate(['day_id' => 'required|integer']);
-
-        auth()->guard('wmc_admin')->user()->company->setPickupDay();
+        auth()->guard('wmc_admin')->user()->company->setPickupDay($request->validate(['day_id' => 'required|integer']));
 
         return response()->json(['message' => 'saved']);
     }
