@@ -56,7 +56,7 @@ class PickupController extends Controller
         $pick_up_requests = DB::table('pick_up_requests')
             ->join('pick_ups', 'pick_up_requests.pick_up_id', '=', 'pick_ups.id')
             ->select('pick_up_requests.*', 'pick_ups.day_id')
-            ->where('pick_ups.waste_company_id', '=', $company_id);
+            ->where('pick_ups.waste_company_id', '=', $company_id)->get();
 
         return PickUpRequestResource::collection($pick_up_requests);
     }
