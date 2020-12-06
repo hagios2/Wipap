@@ -61,6 +61,8 @@ Route::namespace('WMCControllers')->group(function () {
 
         Route::get('request/{pickUpRequest}/serve', 'PickupController@servePickRequest');
 
+        Route::delete('{pickUp}/delete', 'PickupController@destroy');
+
     });
 
     #============================ End WMC Pickup and Pickup Request Routes ========================
