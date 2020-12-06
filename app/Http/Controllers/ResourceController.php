@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Campus;
+use App\Day;
 use App\GarbageType;
 use App\Role;
 use App\ShopType;
@@ -22,5 +23,8 @@ class ResourceController extends Controller
         return Role::where('role','!=', 'super_admin')->get();
     }
 
-
+    public function day()
+    {
+        return Day::all('id', 'day');
+    }
 }
