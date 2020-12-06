@@ -18,6 +18,11 @@ class PickUp extends Model
         return $this->hasMany(PickUpRequest::class);
     }
 
+    public function wasteCompany()
+    {
+        return $this->belongsTo(WasteCompany::class);
+    }
+
 
     public function scopeWasteCompany($query)
     {
