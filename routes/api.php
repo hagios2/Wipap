@@ -66,4 +66,4 @@ Route::get('garbage/types','ResourceController@getGarbageTypes');
 
 Route::get('get/roles','ResourceController@roles');
 
-Route::get('get/days','ResourceController@days');
+Route::get('get/days','ResourceController@day');
