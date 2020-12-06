@@ -5,6 +5,7 @@ namespace App\Http\Controllers\WMCControllers;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\PickUpRequestResource;
 use App\Http\Resources\PickUpResource;
+use App\PickUp;
 use App\PickUpRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,14 +17,31 @@ class PickupController extends Controller
         $this->middleware('auth:wmc_admin');
     }
 
-
     public function setPickupDays(Request $request)
     {
-        $request->validate(['day_id']);
+        $request->validate(['day_id' => 'required|integer']);
 
         auth()->guard('wmc_admin')->user()->company->setPickupDay();
 
         return response()->json(['message' => 'saved']);
+    }
+
+    public function destroy(PickUp $pickUp)
+    {
+        $pick_up_requests = $pickUp->pickupRequest;
+
+        if($pick_up_requests->count() > 0)
+        {
+            $pick_up_requests->map(function ($pick_up_request){
+
+                $pick_up_request->delete();
+            });
+        }
+
+        $pickUp->delete();
+
+        return response()->json(['message' => 'deleted']);
+
     }
 
     public function viewPickUpDays()

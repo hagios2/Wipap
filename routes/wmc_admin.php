@@ -47,5 +47,22 @@ Route::namespace('WMCControllers')->group(function () {
     });
 
     #============================ End WMC VehicleRoutes ========================
+
+
+    #============================ WMC Pickup and Pickup Request Routes ========================
+
+    Route::group(['prefix' => 'pickups'], function () {
+
+        Route::post('create', 'PickupController@setPickupDays');
+
+        Route::get('index', 'PickupController@viewPickUpDays');
+
+        Route::get('request', 'PickupController@viewPickRequest');
+
+        Route::get('request/{pickUpRequest}/serve', 'PickupController@servePickRequest');
+
+    });
+
+    #============================ End WMC Pickup and Pickup Request Routes ========================
 });
 #============================ End WMC Admin Route ==========================================
