@@ -57,7 +57,7 @@ Route::namespace('WMCControllers')->group(function () {
 
         Route::get('index', 'PickupController@viewPickUpDays');
 
-        Route::get('request', 'PickupController@viewPickRequest');
+        Route::get('requests', 'PickupController@viewPickRequest');
 
         Route::get('request/{pickUpRequest}/serve', 'PickupController@servePickRequest');
 

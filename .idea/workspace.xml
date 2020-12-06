@@ -37,7 +37,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="350bb5b6-037a-494f-9ae5-06a347f52aeb" name="Default Changelist" comment="" />
+    <list default="true" id="350bb5b6-037a-494f-9ae5-06a347f52aeb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,7 +189,7 @@
       <workItem from="1605110473056" duration="8000" />
       <workItem from="1606354889822" duration="9974000" />
       <workItem from="1606452142199" duration="2918000" />
-      <workItem from="1607241056097" duration="10563000" />
+      <workItem from="1607241056097" duration="11048000" />
     </task>
     <servers />
   </component>
