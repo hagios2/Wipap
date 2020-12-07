@@ -65,6 +65,34 @@ class SuperAdminController extends Controller
         $admin->update(['isActive' => true]);
 
         return response()->json(['status' => 'unblocked']);
+    }
+
+
+    public function publishCompany()
+    {
+
+        if(auth()->guard('wmc_admin')->user()->company->published)
+        {
+            return response()->json(['status' => 'Company is live already']);
+        }
+
+        auth()->guard('wmc_admin')->user()->company->update(['published' => true ]);
+
+        return response()->json(['status' => 'Turned services on']);
+
+    }
+
+    public function unPublishCompany()
+    {
+
+        if(auth()->guard('wmc_admin')->user()->company->published)
+        {
+            auth()->guard('wmc_admin')->user()->company->update(['published' => false ]);
+
+            return response()->json(['status' => 'Turned services off']);
+        }
+
+        return response()->json(['status' => 'Services are already off']);
 
     }
 

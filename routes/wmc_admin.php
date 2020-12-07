@@ -28,6 +28,10 @@ Route::namespace('WMCControllers')->group(function () {
 
         Route::get('fetch-admins', 'SuperAdminController@fetchAdmins');
 
+        Route::post('/publish-company', 'SuperAdminController@publishCompany');
+
+        Route::post('/unpublish-company', 'SuperAdminController@unpublishCompany');
+
     });
 
     #============================ End WMC Super Admin Routes =====================
