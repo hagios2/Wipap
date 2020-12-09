@@ -23,6 +23,11 @@ class PickUp extends Model
         return $this->belongsTo(WasteCompany::class);
     }
 
+    public function addPickupRequest($pickup)
+    {
+        return $this->pickupRequest()->create($pickup);
+    }
+
 
     public function scopeWasteCompany($query)
     {

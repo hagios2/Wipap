@@ -28,4 +28,20 @@ class PickUpController extends Controller
 
         return UserViewPickUpResource::collection($pick_ups);
     }
+
+    public function makePickUpRequest(PickUp $pickUp)
+    {
+        $user = auth()->guard('api')->user();
+
+        if($user->organization)
+        {
+            $pickUp->addPickupRequest(['organization_id' => $user->organization->id]);
+        }else{
+
+            $pickUp->addPickupRequest(['user_id' => $user->id]);
+        }
+
+        return response()->json(['message' => 'request sent']);
+
+    }
 }

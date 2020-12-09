@@ -48,6 +48,10 @@ Route::namespace('UserControllers')->group(function (){
 
     Route::post('/make-/bin/request', 'BinRequestController@binRequest');
 
+    Route::get('get/company/pick-up', 'PickUpController@viewPickUp');
+
+    Route::post('make/pick-up/{}request', 'PickUpController@viewPickUp');
+
 });
 
 Route::fallback(function(){
