@@ -50,7 +50,7 @@ Route::namespace('UserControllers')->group(function (){
 
     Route::get('get/company/pick-up', 'PickUpController@viewPickUp');
 
-    Route::post('make/pick-up/{}request', 'PickUpController@viewPickUp');
+    Route::post('make/pick-up/{pickUp}/request', 'PickUpController@makePickUpRequest');
 
 });
 
