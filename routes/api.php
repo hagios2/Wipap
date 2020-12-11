@@ -46,7 +46,7 @@ Route::namespace('UserControllers')->group(function (){
 
     });
 
-    Route::post('/make-/bin/request', 'BinRequestController@binRequest');
+    Route::post('make-/bin/request', 'BinRequestController@binRequest');
 
     Route::get('get/company/pick-up', 'PickUpController@viewPickUp');
 
