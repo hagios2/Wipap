@@ -24,9 +24,14 @@ class PickUpController extends Controller
 
         $wm_company = WasteCompany::query()->where('published', true)->latest()->first();
 
-        $pick_ups = PickUp::query()->where('waste_company_id', $wm_company->id)->get();
+        if($wm_company)
+        {
+            $pick_ups = PickUp::query()->where('waste_company_id', $wm_company->id)->get();
 
-        return UserViewPickUpResource::collection($pick_ups);
+            return UserViewPickUpResource::collection($pick_ups);
+        }else{
+            return response()->json(['message' => 'services turned off']);
+        }
     }
 
     public function makePickUpRequest(PickUp $pickUp)
