@@ -21,6 +21,6 @@ class RoleTableSeeder extends Seeder
 
         $d = \App\WasteCompany::find(1);
 
-        $d->update(['published'=> true]);
+        $d->update(['published'=> true, 'status' => 'active']);
     }
 }
