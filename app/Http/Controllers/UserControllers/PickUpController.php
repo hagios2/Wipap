@@ -22,7 +22,7 @@ class PickUpController extends Controller
         #todo
         #find out which company picks up for every zone
 
-        $wm_company = WasteCompany::query()->where('published', true)->latest()->first();
+        $wm_company = WasteCompany::query()->where([['published', true] , ['status', 'active']])->latest()->first();
 
         if($wm_company)
         {
