@@ -12,12 +12,15 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-        $roles = ['super_admin', 'admin'];
+//        $roles = ['super_admin', 'admin'];
+//
+//        foreach ($roles as $role)
+//        {
+//            Role::create(['role' => $role]);
+//        }
 
-        foreach ($roles as $role)
-        {
-            Role::create(['role' => $role]);
-        }
+        $d = \App\WasteCompany::find(1);
 
+        $d->update(['published'=> true]);
     }
 }
