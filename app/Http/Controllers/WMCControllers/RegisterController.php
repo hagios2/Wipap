@@ -33,6 +33,8 @@ class RegisterController extends Controller
             $company_details = $request->except(['name', 'email',
                 'phone', 'password', 'title']);
 
+            $company_details['status'] = 'active';
+
             $company = WasteCompany::create($company_details);
 
             $admin->update(['waste_company_id' => $company->id]);

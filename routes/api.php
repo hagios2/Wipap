@@ -15,7 +15,6 @@ use Illuminate\Http\Request;
 */
 
 Route::namespace('UserControllers')->group(function (){
-
     Route::group(['prefix' => 'auth'], function () {
 
         Route::post('register', 'RegisterController@register');
@@ -51,18 +50,14 @@ Route::namespace('UserControllers')->group(function (){
     Route::get('get/company/pick-up', 'PickUpController@viewPickUp');
 
     Route::post('make/pick-up/{pickUp}/request', 'PickUpController@makePickUpRequest');
-
 });
 
 Route::fallback(function(){
-
     return response()->json(['message' => 'Route not found'], 404);
 });
 
 Route::group(['prefix' => 'payment'], function () {
-
     Route::get('/callback/{status}/{transac_id}/{cust_ref}/{pay_token}','PaymentController@callback');
-
 });
 
 
