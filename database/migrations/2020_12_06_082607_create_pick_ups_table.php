@@ -16,7 +16,8 @@ class CreatePickUpsTable extends Migration
         Schema::create('pick_ups', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('waste_company_id');
-            $table->integer('day_id');
+            $table->date('pick_up_date');
+            $table->integer('garbage_type_id');
             $table->softDeletes();
             $table->timestamps();
         });

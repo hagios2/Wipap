@@ -16,8 +16,8 @@ class PickUpResource extends JsonResource
     {
         return [
             'id' => $this->id,
-
-            'day' => $this->day
+            'pick_up_date' => $this->pick_up_date,
+            'garbage_type' => $this->garbage_type
         ];
     }
 }
