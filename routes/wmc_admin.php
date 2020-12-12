@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 
 #============================ WMC Admin Routes =============================================
 
@@ -12,6 +14,7 @@ Route::namespace('WMCControllers')->group(function () {
         Route::post('refresh', 'AuthController@refresh');
         Route::get('admin', 'AuthController@getAuthUser');
         Route::post('register', 'RegisterController@register');
+        Route::get('admin-company', 'AuthController@getcompanyDetails');
     });
 
     #============================ WMC Super Admin Routes =========================

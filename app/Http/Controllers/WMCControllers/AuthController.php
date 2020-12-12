@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\WMCControllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\WasteManagementResource;
 use App\Http\Resources\WmcAdminResource;
 use App\WasteCompanyAdmin;
 use Illuminate\Http\Request;
@@ -49,9 +50,7 @@ class AuthController extends Controller
      */
     public function getAuthUser()
     {
-
         return new WmcAdminResource(auth()->guard('wmc_admin')->user());
-
     }
 
     /**
@@ -95,23 +94,28 @@ class AuthController extends Controller
     }
 
 
-    public function saveValidId(Request $request)
+//    public function saveValidId(Request $request)
+//    {
+//        $request->validate(['valid_id' => 'nullable|image|mimes:png,jpg,jpeg']);
+//
+//        $file = $request->file('valid_id');
+//
+//        $user = auth()->guard('api')->user();
+//
+//        $fileName = $file->getClientOriginalName();
+//
+//        $path = "public/valid ids/$user->id/";
+//
+//        $file->storeAs($path, $fileName);
+//
+//        $user->update(['valid_id' => $path.$fileName]);
+//
+//        return response()->json(['status' => 'File saved']);
+//    }
+
+    public function getcompanyDetails()
     {
-        $request->validate(['valid_id' => 'nullable|image|mimes:png,jpg,jpeg']);
-
-        $file = $request->file('valid_id');
-
-        $user = auth()->guard('api')->user();
-
-        $fileName = $file->getClientOriginalName();
-
-        $path = "public/valid ids/$user->id/";
-
-        $file->storeAs($path, $fileName);
-
-        $user->update(['valid_id' => $path.$fileName]);
-
-        return response()->json(['status' => 'File saved']);
+        return new WasteManagementResource(auth()->guard('wmc_admin')->company);
     }
 
 
