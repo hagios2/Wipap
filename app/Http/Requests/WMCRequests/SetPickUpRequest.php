@@ -24,7 +24,6 @@ class SetPickUpRequest extends FormRequest
     public function rules()
     {
         return [
-            'waste_company_id' => 'required|integer',
             'pick_up_date' => 'required|date',
             'garbage_type_id' => 'required|integer',
         ];

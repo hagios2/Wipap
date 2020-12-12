@@ -47,6 +47,5 @@ class PickUpController extends Controller
         }
 
         return response()->json(['message' => 'request sent']);
-
     }
 }
