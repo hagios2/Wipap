@@ -95,4 +95,14 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsTo(Role::class);
     }
+
+    public function addPickupRequest($pickup)
+    {
+        return $this->pickupRequest()->create($pickup);
+    }
+
+    public function pickupRequest()
+    {
+        return $this->hasMany(PickUpRequest::class);
+    }
 }

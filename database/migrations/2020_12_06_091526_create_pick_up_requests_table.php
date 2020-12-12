@@ -15,7 +15,8 @@ class CreatePickUpRequestsTable extends Migration
     {
         Schema::create('pick_up_requests', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('pick_up_id')->unsigned();
+            $table->date('pick_up_date');
+            $table->integer('garbage_type_id')->unsigned();
             $table->integer('user_id')->unsigned()->nullable();
             $table->integer('organization_id')->unsigned()->nullable();
             $table->string('status')->default('pending');

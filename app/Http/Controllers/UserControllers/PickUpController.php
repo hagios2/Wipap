@@ -34,16 +34,16 @@ class PickUpController extends Controller
         }
     }
 
-    public function makePickUpRequest(PickUp $pickUp)
+    public function makePickUpRequest(Request $request)
     {
+        $pick_up_request = $request->validate(['garbage_type_id' => 'required|integer', ]);
         $user = auth()->guard('api')->user();
 
         if($user->organization)
         {
-            $pickUp->addPickupRequest(['organization_id' => $user->organization->id]);
+            $user->organization->addPickupRequest(['organization_id' => $pick_up_request]);
         }else{
-
-            $pickUp->addPickupRequest(['user_id' => $user->id]);
+            $user->addPickupRequest(['user_id' => $user->id]);
         }
 
         return response()->json(['message' => 'request sent']);

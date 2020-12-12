@@ -13,19 +13,9 @@ class PickUp extends Model
         return $this->belongsTo(Day::class);
     }
 
-    public function pickupRequest()
-    {
-        return $this->hasMany(PickUpRequest::class);
-    }
-
     public function wasteCompany()
     {
         return $this->belongsTo(WasteCompany::class);
-    }
-
-    public function addPickupRequest($pickup)
-    {
-        return $this->pickupRequest()->create($pickup);
     }
 
     public function garbageType()
