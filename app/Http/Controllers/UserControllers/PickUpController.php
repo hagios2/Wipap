@@ -36,14 +36,14 @@ class PickUpController extends Controller
 
     public function makePickUpRequest(Request $request)
     {
-        $pick_up_request = $request->validate(['garbage_type_id' => 'required|integer', ]);
+        $pick_up_request = $request->validate(['garbage_type_id' => 'required|integer', 'pick_up_date' => 'required|date']);
         $user = auth()->guard('api')->user();
 
         if($user->organization)
         {
-            $user->organization->addPickupRequest(['organization_id' => $pick_up_request]);
+            $user->organization->addPickupRequest($pick_up_request);
         }else{
-            $user->addPickupRequest(['user_id' => $user->id]);
+            $user->addPickupRequest($pick_up_request);
         }
 
         return response()->json(['message' => 'request sent']);
