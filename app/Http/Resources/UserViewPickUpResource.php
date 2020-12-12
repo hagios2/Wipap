@@ -17,9 +17,14 @@ class UserViewPickUpResource extends JsonResource
         return [
             'id' => $this->id,
 
-            'day' => $this->day,
+            'pick_up_date' => $this->day,
 
-            'waste_company' => $this->wasteCompany
+            'waste_company' => [
+                'id' => $this->wasteCompany->id,
+                'company_name' => $this->wasteCompany->company_name
+            ],
+
+            'garbage_type' => $this->garbageType
         ];
     }
 }
