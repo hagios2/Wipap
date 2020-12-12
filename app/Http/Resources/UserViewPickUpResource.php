@@ -17,7 +17,7 @@ class UserViewPickUpResource extends JsonResource
         return [
             'id' => $this->id,
 
-            'pick_up_date' => $this->day,
+            'pick_up_date' => $this->pick_up_date,
 
             'waste_company' => [
                 'id' => $this->wasteCompany->id,
