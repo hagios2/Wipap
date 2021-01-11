@@ -13,7 +13,10 @@
         "fruitcake/laravel-cors": "^2.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "tymon/jwt-auth": "^1.0"
+        "tymon/jwt-auth": "^1.0",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "ext-openssl": "*"
     },
     "require-dev": {
         "filp/whoops": "^2.0",

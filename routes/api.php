@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 
 /*
@@ -50,14 +51,20 @@ Route::namespace('UserControllers')->group(function (){
     Route::get('get/company/pick-up', 'PickUpController@viewPickUp');
 
     Route::post('make/pick-up/{pickUp}/request', 'PickUpController@makePickUpRequest');
+
+    #------------------------ Payment Integration ------------------------------------------
+
+    Route::post('/user/payment', 'PaymentController@payment')->name('user.pay');
+
+    Route::post('/user/payment/callback', 'PaymentController@callback')->name('user.pay.callback');
+
+    Route::get('user/payment/transactions', 'PaymentController@paymentTransactions');
+
+    #------------------------ End of Payment Integration --------------------------------------
 });
 
 Route::fallback(function(){
     return response()->json(['message' => 'Route not found'], 404);
-});
-
-Route::group(['prefix' => 'payment'], function () {
-    Route::get('/callback/{status}/{transac_id}/{cust_ref}/{pay_token}','PaymentController@callback');
 });
 
 

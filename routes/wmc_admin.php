@@ -72,5 +72,14 @@ Route::namespace('WMCControllers')->group(function () {
     });
 
     #============================ End WMC Pickup and Pickup Request Routes ========================
+
+
+    Route::post('/wmc/payment', 'WMCPaymentController@payment')->name('wmc.pay');
+
+    Route::get('wmc/payment/transactions', 'WMCPaymentController@paymentTransactions');
+
+    Route::post('/wmc/payment/callback', 'WMCPaymentController@callback')->name('wmc.payment.callback');
+
+#------------------------ End of Payment Integration ----------------------------------------------
 });
 #============================ End WMC Admin Route ==========================================

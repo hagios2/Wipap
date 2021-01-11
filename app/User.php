@@ -105,4 +105,15 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany(PickUpRequest::class);
     }
+
+
+    public function billingDetail()
+    {
+        return $this->hasOne(BillingDetail::class);
+    }
+
+    public function addBillingDetail($billing_detail)
+    {
+        return $this->billingDetail()->create($billing_detail);
+    }
 }
