@@ -102,7 +102,7 @@ class PaymentController extends Controller
                     'device_ip' => $_SERVER['REMOTE_ADDR'],
                 ]);
 
-                $payment_response['callback_url'] = route('shop.payment.callback');
+                $payment_response['callback_url'] = route('user.pay.callback');
 
                 return response()->json($payment_response);
             }
