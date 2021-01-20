@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UserPaymentRequest;
 use App\Http\Resources\UserPaymentTransactionResource;
 use App\Services\PaymentService;
-use App\User;
 use App\UserPayment;
 use App\WasteCompany;
 use App\WMCPayment;
@@ -93,7 +92,7 @@ class WMCPaymentController extends Controller
                 Log::info($payment_response);
 
                 UserPayment::create([
-                    'merchandiser_id' => $company->id,
+                    'user_id' => auth()->id(),
                     'billing_detail_id' => $billing_details->id,
                     'amount' => 200,
                     'email' => $request->email ?? $company->email,
