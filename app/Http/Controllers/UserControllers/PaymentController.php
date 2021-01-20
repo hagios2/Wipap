@@ -38,11 +38,11 @@ class PaymentController extends Controller
 
             $payment->update(['status' => 'success']);
 
-            $shop = User::find($payment->user_id);
+            $user = User::find($payment->user_id);
 
-            $shop->update(['payment_status' => 'paid']);
+            $user->update(['payment_status' => 'paid']);
 
-            Log::info('logging User Payment after update | '.  $shop);
+            Log::info('logging User Payment after update | '.  $user);
 
         }else{
             $payment->update(['status' => 'failed']);
@@ -91,7 +91,7 @@ class PaymentController extends Controller
                 Log::info($payment_response);
 
                 UserPayment::create([
-                    'merchandiser_id' => $user->id,
+                    'user_id' => $user->id,
                     'billing_detail_id' => $billing_details->id,
                     'amount' => 200,
                     'email' => $request->email ?? $user->email,
@@ -107,7 +107,8 @@ class PaymentController extends Controller
                 return response()->json($payment_response);
             }
 
-        } else { #momo
+        }
+        else { #momo
 
             $payment_details = [
                 'amount' => 400,
@@ -136,7 +137,7 @@ class PaymentController extends Controller
                 Log::info($payment_response);
 
                 UserPayment::create([
-                    'merchandiser_id' => $user->id,
+                    'user_id' => $user->id,
                     'amount' => 400,
                     'email' => $payment_details['email'],
                     'firstname' => $payment_details['firstname'],
