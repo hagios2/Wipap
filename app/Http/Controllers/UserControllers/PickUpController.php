@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\UserControllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserPickupRequest;
 use App\Http\Resources\PickUpResource;
 use App\Http\Resources\UserViewPickUpResource;
 use App\PickUp;
@@ -34,9 +35,10 @@ class PickUpController extends Controller
         }
     }
 
-    public function makePickUpRequest(Request $request)
+    public function makePickUpRequest(UserPickupRequest $request)
     {
-        $pick_up_request = $request->validate(['garbage_type_id' => 'required|integer', 'pick_up_date' => 'required|date']);
+        $pick_up_request = $request->validated();
+
         $user = auth()->guard('api')->user();
 
         if($user->organization)
