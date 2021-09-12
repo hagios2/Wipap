@@ -24,7 +24,7 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login(Request $request)
+    public function login(Request $request): \Illuminate\Http\JsonResponse
     {
         $credentials = request(['email', 'password']);
 
@@ -39,8 +39,8 @@ class AuthController extends Controller
 
         $user->update([
             'last_login' => now(),
-            'lat' => $request->lat,
-            'long' => $request->long,
+//            'lat' => $request->lat,
+//            'long' => $request->long,
         ]);
 
         return $this->respondWithToken($token);
@@ -49,11 +49,10 @@ class AuthController extends Controller
     /**
      * Get the authenticated User.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return AuthUserResource
      */
-    public function getAuthUser()
+    public function getAuthUser(): AuthUserResource
     {
-
         return new AuthUserResource(auth()->guard('api')->user());
 
     }

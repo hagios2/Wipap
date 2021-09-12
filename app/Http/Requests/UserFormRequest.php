@@ -21,39 +21,41 @@ class UserFormRequest extends FormRequest
      *
      * @return array
      */
-    public function rules(Request $request)
+    public function rules(): array
     {
-        if($request->account_type == 'company')
+        $validation_rules = [
+
+            "name" => 'required|string',
+
+            "email" => "required|email|unique:users,email",
+
+            "phone" => "required|string|unique:users,phone",
+
+            'location' => 'required|string',
+
+            "password" => "required|string",
+
+            'title' => 'required|string',
+
+            'lat' => 'nullable',
+
+            'long' => 'nullable',
+
+            'digital_address' => 'nullable'
+        ];
+
+        if(request()->account_type == 'organization')
         {
-            return [
+            $validation_rules["organization_name"] = 'required|string';
 
-                "company_name" => 'required|string',
-    
-                "email" => "required|email|unique:companies,email",
-    
-                "phone" => "required|string|unique:companies,phone",
+            $validation_rules["organization_email"] = "required|email|unique:organizations,email";
 
-                'location' => 'required|string',
-    
-                "password" => "required|string"
-            ];
+            $validation_rules["organization_phone"] = "required|string|unique:organizations,phone";
 
-        }else if($request->account_type == 'personal'){
-
-            return [
-
-                "name" => 'required|string',
-    
-                "email" => "required|email|unique:users,email",
-    
-                "phone" => "required|string|unique:users,phone",
-
-                'location' => 'required|string',
-    
-                "password" => "required|string"
-            ];
+            $validation_rules['logo'] = 'required|string';
         }
-        
+
+        return $validation_rules;
     }
-      
+
 }

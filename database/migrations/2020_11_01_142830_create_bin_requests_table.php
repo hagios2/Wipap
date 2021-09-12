@@ -18,7 +18,11 @@ class CreateBinRequestsTable extends Migration
             $table->integer('user_id')->unsigned()->nullable();
             $table->integer('organization_id')->unsigned()->nullable();
             $table->integer('garbage_type_id')->unsigned();
+            $table->string('bin_size')->nullable();
             $table->integer('waste_company_id')->unsigned();
+            $table->integer('quantity')->default(1);
+            $table->boolean('replacement')->default(false);
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

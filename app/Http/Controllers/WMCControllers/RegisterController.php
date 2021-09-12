@@ -6,71 +6,27 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\WMCRequests\RegistrationRequest;
 use App\Jobs\WMCAdminRegistrationJob;
 use App\Role;
+use App\Services\WMCRegistrationService;
 use App\VerifyEmail;
 use App\WasteCompany;
 use App\WasteCompanyAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
-    public function register(RegistrationRequest $request)
+    private $registrationService;
+
+    public function __construct(WMCRegistrationService $registrationService)
     {
-        DB::transaction(function () use ($request) {
-
-            $role = Role::where('role', 'super_admin')->first();
-
-            $user_details = $request->only(['name', 'email', 'phone', 'title']);
-
-            $user_details['password'] = Hash::make($request->password);
-
-            $user_details['role_id'] = $role->id;
-
-            $admin = WasteCompanyAdmin::create($user_details);
-
-            $company_details = $request->except(['name', 'email',
-                'phone', 'password', 'title']);
-
-            $company_details['status'] = 'active';
-
-            $company = WasteCompany::create($company_details);
-
-            $admin->update(['waste_company_id' => $company->id]);
-
-            if($request->hasFile('logo'))
-            {
-                $this->uploadCompanyFiles($company, 'logo');
-            }
-
-            if($request->hasFile('business_cert'))
-            {
-                $this->uploadCompanyFiles($company, 'business_cert');
-            }
-
-            $new_token = Str::random(60);
-
-            $token = VerifyEmail::create([
-                'token' => $new_token,
-                'waste_company_admin_id' => $admin->id,
-                'isAWMCAdminToken' => true
-            ]);
-
-            WMCAdminRegistrationJob::dispatch($admin, $token);
-
-        });
-
-        return response()->json(['status' => 'success'], 200);
+        $this->registrationService = $registrationService;
     }
 
-    // public function register(Request $request)
-    // {
-    //     if($this->validator($request->all())->validate())
-    //     {
-    //         return  $this->create($request->all());
-    //     }
-
-    //     return $this->validator($request->all())->validate();
-    // }
+    public function register(RegistrationRequest $request): \Illuminate\Http\JsonResponse
+    {
+        return $this->registrationService->addNewWMC($request);
+    }
 }

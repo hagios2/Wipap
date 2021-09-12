@@ -19,9 +19,12 @@ class CreateWasteCompaniesTable extends Migration
             $table->string('company_email')->unique();
             $table->string('company_phone')->unique()->nullable();
             $table->string('company_address');
-            $table->string('status')->default('Pending');
+            $table->string('status')->default('pending');
             $table->boolean('published')->default(false);
             $table->string('logo')->nullable();
+            $table->string('digital_address')->nullable();
+            $table->string('lat');
+            $table->string('long');
             $table->string('business_cert')->nullable();
             $table->timestamps();
         });

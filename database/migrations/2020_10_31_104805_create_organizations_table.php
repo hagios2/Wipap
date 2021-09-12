@@ -15,12 +15,15 @@ class CreateOrganizationsTable extends Migration
     {
         Schema::create('organizations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('company_name');
-            $table->string('email')->unique();
-            $table->string('phone')->unique()->nullable();
+            $table->string('organization_name');
+            $table->string('organization_email')->unique();
+            $table->string('organization_phone')->unique()->nullable();
             $table->string('location');
-            $table->string('status')->default('Pending');
+            $table->string('status')->default('pending');
             $table->string('logo')->nullable();
+            $table->string('digital_address')->nullable();
+            $table->string('lat');
+            $table->string('long');
             $table->timestamps();
         });
     }

@@ -11,7 +11,7 @@ class RegistrationRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -21,7 +21,7 @@ class RegistrationRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
 
         if(request()->has('organization'))
@@ -36,6 +36,9 @@ class RegistrationRequest extends FormRequest
                 'logo' => 'nullable|image',
                 'company_phone' => 'required|unique:waste_companies,company_phone',
                 'company_purpose' => 'nullable|string',
+                'lat' => 'required',
+                'long' => 'required',
+                'digital_address' => 'required|string',
 
                 #------------ for Company Superadmin ------------------------
                 'name' => 'required|string',
